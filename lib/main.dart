@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:frontend_bts/blocs/auth/auth_bloc.dart';
+import 'package:frontend_bts/blocs/checklist/checklist_bloc.dart';
 import 'package:frontend_bts/routes/routes.dart';
 import 'package:frontend_bts/injection.dart' as di;
 
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => di.locator<AuthBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => di.locator<ChecklistBloc>(),
         ),
       ],
       child: MaterialApp.router(
